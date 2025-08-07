@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Tailwind CDN (quick prototype) -->
+  
+  <title>AuraGuard </title>
+  <link rel="icon" type="image/svg+xml" href="img/women_safety_logo.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="min-h-screen bg-pink-50 flex flex-col items-center justify-between py-10">
+
+  
+  <!-- Navbar -->
+  <nav class="w-full bg-white shadow-md px-6 py-4 flex items-center justify-between fixed top-0 left-0 z-50">
+    <!-- Logo Left -->
+    <div class="flex items-center gap-3">
+      <img src="img/women_safety_logo.svg" alt="Guardian Angel" class="w-10 h-10 opacity-90" />
+      <span class="text-xl font-bold text-slate-800"></span>
+    </div>
+
+    <!-- Tabs Right -->
+    <ul class="flex gap-6 text-sm font-medium text-gray-700">
+      <li><a id = "tab-home" href="#" class="hover:text-pink-500 transition">Home</a></li>
+      <li><a id = "tab-reports" href="#" class="hover:text-pink-500 transition">All Reports</a></li>
+      <li><a id = "tab-facts" href="#" class="hover:text-pink-500 transition">Important Facts</a></li>
+      <li><a id = "tab-help" href="#" class="hover:text-pink-500 transition">Get Help</a></li>
+    </ul>
+  </nav>
+
+  <main class="flex-grow flex flex-col items-center justify-start px-4 py-10 pt-16">
+  <div id = "formcontainer">
+  <form class="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-8 space-y-6">
+
+    <h1 class="text-2xl font-bold text-pink-600 text-center">
+      Report an Incident
+    </h1>
+
+    <!-- ROW 1 : type • location • description -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Type of incident -->
+      <div class="flex flex-col">
+        <label for="type" class="mb-1 text-sm font-medium text-gray-700">
+          Type&nbsp;of&nbsp;Incident
+        </label>
+        <!-- Custom Dropdown: type -->
+<div class="relative inline-block text-left w-full">
+  <button type="button"
+          id="typeDropdownBtn"
+          onclick="toggleDropdown('type')"
+          class="inline-flex justify-between w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition">
+    <span id="typeDropdownValue">Select</span>
+    <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.043l3.71-3.813a.75.75 0 111.08 1.04l-4.25 4.36a.75.75 0 01-1.08 0l-4.25-4.36a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+    </svg>
+  </button>
+
+  <!-- Dropdown Menu -->
+  <div id="typeDropdownMenu"
+       class="hidden absolute z-10 mt-2 w-full origin-top-right rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition transform scale-95 opacity-0 duration-200 ease-out">
+    <div class="py-1 text-sm text-gray-700">
+      <button onclick="selectDropdownOption('type', 'Verbal', event)" class="w-full text-left px-4 py-2 hover:bg-gray-100">Verbal</button>
+      <button onclick="selectDropdownOption('type', 'Physical', event)" class="w-full text-left px-4 py-2 hover:bg-gray-100">Physical</button>
+    <button onclick="selectDropdownOption('type', 'Sexual', event)" class="w-full text-left px-4 py-2 hover:bg-gray-100">Sexual</button>
+      <button onclick="selectDropdownOption('type', 'Stalking', event)" class="w-full text-left px-4 py-2 hover:bg-gray-100">Stalking</button>
+      <button onclick="selectDropdownOption('type', 'Online Abuse', event)" class="w-full text-left px-4 py-2 hover:bg-gray-100">Online Abuse</button>
+      
+    </div>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Location -->
+      <div class="flex flex-col">
+        <label for="location" class="mb-1 text-sm font-medium text-gray-700">
+          Location
+        </label>
+        <input id="location" type="text" placeholder="Street / Area"
+               class="rounded-md border-gray-300 text-sm p-2 shadow-sm
+                      focus:ring-pink-500 focus:border-pink-500" />
+      </div>
+
+      <!-- Description (resizable textarea) -->
+      <div class="flex flex-col">
+        <label for="description" class="mb-1 text-sm font-medium text-gray-700">
+          Description
+        </label>
+        <textarea id="description" rows="3" placeholder="Brief details…"
+                  class="resize-y rounded-md border-gray-300 text-sm p-2 shadow-sm
+                         focus:ring-pink-500 focus:border-pink-500"></textarea>
+      </div>
+    </div>
+
+    <!-- ROW 2 : landmarks • attacker known • attacker gender -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Nearby landmarks -->
+      <div class="flex flex-col">
+        <label for="landmarks" class="mb-1 text-sm font-medium text-gray-700">
+          Nearby&nbsp;Landmarks
+        </label>
+        <input id="landmarks" type="text" placeholder="Mall, metro exit…"
+               class="rounded-md border-gray-300 text-sm p-2 shadow-sm
+                      focus:ring-pink-500 focus:border-pink-500" />
+      </div>
+
+      <!-- Attacker known? -->
+      <div class="flex flex-col">
+        <label for="known" class="mb-1 text-sm font-medium text-gray-700">
+          Attacker&nbsp;Known
+        </label>
+        <!-- Custom Dropdown: Attacker Known -->
+<div class="relative inline-block text-left w-full">
+  <button type="button"
+          id="knownDropdownBtn"
+          onclick="toggleDropdown('known')"
+          class="inline-flex justify-between w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition">
+    <span id="knownDropdownValue">Select</span>
+    <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.043l3.71-3.813a.75.75 0 111.08 1.04l-4.25 4.36a.75.75 0 01-1.08 0l-4.25-4.36a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+    </svg>
+  </button>
+
+  <!-- Dropdown Menu -->
+  <div id="knownDropdownMenu"
+       class="hidden absolute z-10 mt-2 w-full origin-top-right rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition transform scale-95 opacity-0 duration-200 ease-out">
+    <div class="py-1 text-sm text-gray-700">
+      <button onclick="selectDropdownOption('known', 'Yes', event)" class="w-full text-left px-4 py-2 hover:bg-gray-100">Yes</button>
+      <button onclick="selectDropdownOption('known', 'No', event)" class="w-full text-left px-4 py-2 hover:bg-gray-100">No</button>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Attacker gender -->
+      <div class="flex flex-col">
+        <label for="gender" class="mb-1 text-sm font-medium text-gray-700">
+          Attacker&nbsp;Gender
+        </label>
+        <!-- Custom Dropdown: Attacker gender -->
+<div class="relative inline-block text-left w-full">
+  <button type="button"
+          id="genderDropdownBtn"
+          onclick="toggleDropdown('gender')"
+          class="inline-flex justify-between w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition">
+    <span id="genderDropdownValue">Select</span>
+    <svg class="ml-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.043l3.71-3.813a.75.75 0 111.08 1.04l-4.25 4.36a.75.75 0 01-1.08 0l-4.25-4.36a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+    </svg>
+  </button>
+
+  <!-- Dropdown Menu -->
+  <div id="genderDropdownMenu"
+       class="hidden absolute z-10 mt-2 w-full origin-top-right rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition transform scale-95 opacity-0 duration-200 ease-out">
+    <div class="py-1 text-sm text-gray-700">
+      <button onclick="selectDropdownOption('gender', 'Male', event)" class="w-full text-left px-4 py-2 hover:bg-gray-100">Male</button>
+      <button onclick="selectDropdownOption('gender', 'Female', event)" class="w-full text-left px-4 py-2 hover:bg-gray-100">Female</button>
+      <button onclick="selectDropdownOption('gender', 'Others', event)" class="w-full text-left px-4 py-2 hover:bg-gray-100">Others</button>
+
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <input type="hidden" name="typeOfIncident" id="typeInput">
+<input type="hidden" name="attackerKnown" id="knownInput">
+<input type="hidden" name="attackerGender" id="genderInput">
+
+
+
+    <!-- Submit (placeholder) -->
+    <!-- Submit Button – Beautified -->
+<button id = "submitBtn" type="button"
+        
+        class="w-full inline-flex items-center justify-center gap-2
+               bg-gradient-to-r from-pink-500 to-pink-600
+               text-white font-semibold py-3 px-6
+               rounded-xl shadow-lg hover:shadow-xl hover:brightness-110
+               transition-all duration-200 ease-in-out hover:scale-105">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+  </svg>
+  Submit Report
+</button>
+
+
+  </form>
+</div>
+
+  
+
+<!-- ////////////////////////////////////////////// -->
+<!----------------------------- THANK YOU QUOTE ------------------------------>
+ <!-- disappears after 8 seconds -->
+<div id = "thankYouContainer" class=" hidden w-full flex flex-col items-center justify-center mt-10 space-y-6 px-4">
+
+  <!-- Quote -->
+  <p class="text-center text-xl italic text-slate-800 font-semibold text-center max-w-3xl">
+    “Your voice matters. Reporting helps protect others too.”
+  </p>
+
+  
+</div>
+
+
+<!-- //////////////////////////////////////////////// -->
+
+  <!-- All Reports Section -->
+   <div id = "reports-section" class = "hidden mt-10 w-full  items-center">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">All Submitted Reports</h2>
+
+    <!-- Sorting Dropdown -->
+<div class="flex justify-center mb-4">
+  <label for="sortSelect" class="mr-2 font-medium">Sort by:</label>
+  <select id="sortSelect" onchange="loadReports(1)" class="border border-gray-300 rounded px-2 py-1">
+    <option value="latest">Latest First</option>
+    <option value="oldest">Oldest First</option>
+  </select>
+</div>
+
+    <!-- ////////////////////////////////////// -->
+     <!-- Search bar goes here -->
+      <!-- /////////////////////////////////// -->
+       
+
+<form class="max-w-md mx-auto mb-5">   
+    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+    <div class="relative">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+        </div>
+        <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for Location, Type..." required />
+        <button id = "searchBtn" type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+    </div>
+</form>
+
+
+<!-- Pagination Controls -->
+<div id="paginationControls" class="flex justify-center items-center mt-6 gap-4">
+  <button onclick="loadReports(currentPage - 1)" id="prevBtn" class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400">Prev</button>
+  <span id="pageIndicator" class="text-gray-700 font-semibold"></span>
+  <button onclick="loadReports(currentPage + 1)" id="nextBtn" class="bg-gray-300 px-3 py-1 rounded hover:bg-gray-400">Next</button>
+</div>
+
+
+    <div id="reportList" class="grid grid-cols-1 md:grid-cols-2 gap-4 px-6 w-full max-w-5xl">
+    <!-- dynamically loaded report cards will appear here -->
+     <!-- try to use: max-w-4xl mx-auto px-4 in class of reportList to get only 1 report and not 2 side by side -->
+    </div>
+    
+   </div>
+
+   <!-- ////////////////////////////////////////////////////////////////////////// -->
+   <!------------------------------------ Facts Section -->
+<div id="facts-section" class="hidden mt-16 px-6 py-10 bg-white shadow-2xl rounded-2xl max-w-3xl mx-auto space-y-8 border border-pink-100">
+  <h2 class="text-3xl font-extrabold text-gray-900 text-center">Did You Know?</h2>
+  
+  <div class="flex justify-center">
+    <blockquote id="factDisplay" class="text-xl text-gray-700 text-center italic max-w-2xl">
+      <!-- Fact will be inserted here -->
+    </blockquote>
+  </div>
+
+  <div class="flex justify-center mt-6">
+    <button id="showFactBtn" class="bg-pink-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-pink-600 transition-all duration-200">
+      Show Another Fact
+    </button>
+  </div>
+</div>
+
+
+<!-- /////////////////////////////////////////////////////////////////////////// -->
+    <!-- -------------------------------GET HELP SECTION ---------------->
+<!-- ////////////////////////////////////////////////////////////////////////// -->
+     <div id = "help-section" class = "hidden">
+      <div class="max-w-3xl mx-auto mt-10 space-y-4">
+
+  <!-- Quick Safety Tips -->
+  <details class="bg-white shadow-md rounded-xl p-6 open:shadow-lg transition">
+    <summary class="cursor-pointer text-lg font-semibold text-slate-800">🔒 Quick Safety Tips</summary>
+    <ul class="list-disc mt-3 pl-5 text-gray-700 space-y-2">
+      <li>Always carry pepper spray or a personal alarm.</li>
+      <li>Add a police siren shortcut sound on your phone.</li>
+      <li>Know Your Rights: You can file a Zero FIR at any police station, no matter where the incident occurred.</li>
+      <li>Share live location with someone you trust.</li>
+      <li>Capture license plates if you feel unsafe.</li>
+      <li>Be aware of your surroundings.</li>
+      <li>Trust your instincts — get out of any situation that feels wrong.</li>
+    </ul>
+  </details>
+
+  <!-- Self-Defense Resources -->
+  <details class="bg-white shadow-md rounded-xl p-6 open:shadow-lg transition">
+    <summary class="cursor-pointer text-lg font-semibold text-slate-800">🥋 Self-Defense Resources</summary>
+    <p class="mt-3 text-gray-700">
+      Check out <a href="https://www.youtube.com/results?search_query=self+defense+for+women" target="_blank" class="text-pink-500 underline">free video lessons</a> and guides to protect yourself.
+    </p>
+  </details>
+
+  <!-- Emergency Contacts -->
+  <details class="bg-white shadow-md rounded-xl p-6 open:shadow-lg transition">
+    <summary class="cursor-pointer text-lg font-semibold text-slate-800">📞 Emergency Contacts</summary>
+    <ul class="mt-3 text-gray-700">
+      <li>🔹 Call 112 - National Emergency Number</li>
+      <li>🔹 Police: 100</li>
+      <li>🔹 Women's Helpline: 1091</li>
+      <li>🔹 Childline: 1098</li>
+      <li>🔹 Cyber Crime: 155260</li>
+    </ul>
+  </details>
+
+  <!-- Support -->
+  <details class="bg-white shadow-md rounded-xl p-6 open:shadow-lg transition">
+    <summary class="cursor-pointer text-lg font-semibold text-slate-800">💬 Support & Encouragement</summary>
+    <p class="mt-3 text-gray-700 italic">
+      You are not alone. Help is always available. Your safety is your right.
+    </p>
+  </details>
+
+</div>
+
+      <!-- Help Content -->
+     </div>
+
+</main>
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+ <!---------------------------------- FOOTER GOES HERE -------------------------->
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+<footer class="bg-white text-sm text-gray-700 py-6 px-4 shadow-md">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+    
+    <!-- Left Text -->
+    <div class="text-sm text-center md:text-left">
+      © 2025 <span class="font-semibold text-pink-600">AuraGuard</span>. All rights reserved.
+    </div>
+
+    <!-- Center Nav Links -->
+    <div class="flex gap-6 text-sm">
+      <a href="#" class="hover:text-pink-500 transition">Privacy Policy</a>
+      <a href="#" class="hover:text-pink-500 transition">Terms</a>
+      <a href="#" class="hover:text-pink-500 transition">Contact</a>
+    </div>
+
+    <!-- Right Socials (optional) -->
+    <div class="flex gap-4">
+      <a href="https://instagram.com" target="_blank" title="Instagram" class="hover:opacity-75">
+        <img src="img/insta.svg" alt="Instagram" class="w-5 h-5" />
+      </a>
+      <a href="mailto:auraguard.contact@gmail.com" title="Email" class="hover:opacity-75">
+        <img src="img/mail.svg" alt="Email" class="w-5 h-5" />
+      </a>
+    </div>
+
+  </div>
+
+  <!-- 👁️ Project Views (Bottom Row) -->
+  <div class="mt-4 text-center text-xs text-gray-500">
+    👁️ Total Project Views: <span id="view-counter" class="font-medium">Loading...</span>
+  </div>
+  
+</footer>
+
+
+  <script src = "script.js" defer></script>
+  
+
+</body>
+</html>
