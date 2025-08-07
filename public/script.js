@@ -65,7 +65,7 @@ if (!typeOfIncident && !location && !description) {
     // alert("✅ Incident report submitted successfully.");
   // replace abv 2 lines by fetch funcn to connect frontend and backend on form submit
 
-  fetch("/api/report/create", {
+  fetch("https://auraguard.onrender.com/api/report/create", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -279,7 +279,7 @@ async function loadReports(page = 1, searchQuery = '') {
     const cleanSearch = searchQuery ? searchQuery.trim() : '';
     
     // Build URL with parameters
-    let url = "/api/report/reports";
+    let url = "https://auraguard.onrender.com/api/report/reports";
     const params = new URLSearchParams();
     
     // Add pagination
@@ -411,7 +411,7 @@ document.getElementById('sortSelect').addEventListener('change', () => {
 // -----------------------------------------------
 // ----------------------VIEWS COUNTER----------------
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/api/views')
+  fetch('https://auraguard.onrender.com/api/views')
     .then(res => res.json())
     .then(data => {
       const counter = document.getElementById('view-counter');
