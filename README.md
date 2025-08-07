@@ -48,13 +48,14 @@
 
 # ✨AuraGuard
 
-I Created **AuraGuard** to provide a safe and anonymous space for users to report uncomfortable or dangerous incidents they've faced. it features dynamic form handling, real-time report stats, and clean and responsive design.
+I created **AuraGuard** to provide a safe and anonymous space for users to report uncomfortable or dangerous incidents they've faced. it features dynamic form handling, real-time report stats, and clean and responsive design.
 
 ---
 
 ## Live Demo
 
 🔗[Visit the Live App](https://auraguard.onrender.com/#)
+please wait a few seconds for application to load.
 
 ---
 
