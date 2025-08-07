@@ -136,3 +136,8 @@ Your suggestions are always welcome. I’m doing my bit to **build something tha
 
 ## Author
 Made with Care by Shatakshi Gupta
+
+---
+
+#### current project count is: 8
+this includes the visits made by my system and no other IP or devices.
