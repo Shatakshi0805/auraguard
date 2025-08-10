@@ -70,7 +70,7 @@ please wait a few seconds for application to load.
 
 ---
 
-## 💻 Tech Stack
+## Tech Stack
 
 | Frontend | Backend      | Database | Hosting    |
 |----------|--------------|----------|------------|
@@ -94,11 +94,11 @@ please wait a few seconds for application to load.
 ---
 
 ## Video:
-🎥 [Click here to watch demo video](https://drive.google.com/file/d/1rWdDad6Nc13tl31fEKhswHPhW3dqrk5F/view?usp=sharing)
+ [Click here to watch demo video](https://drive.google.com/file/d/1rWdDad6Nc13tl31fEKhswHPhW3dqrk5F/view?usp=sharing)
 
 ---
 
-## ⚠️ Disclaimer:
+##  Disclaimer:
 
 All reports currently visible on the platform are **sample/test data only**.  
 They are not real reports and are included for demonstration purposes.  
@@ -106,36 +106,37 @@ Please do not interpret them as actual incidents.
 
 ---
 
-## 💬 About this Project:
+## ✍ About this Project:
+Harassment, cat-calling, groping, may seem very small at a large aspect but they often lead to trauma for life ask any person who's been through it. if we're not willing to talk about it we're not ready to solve the problem.
+
 This project was built out of **curiosity**, a **desire to help**, and the hope to make even a small impact.
 
-I've seen how serious and common **women 's safety issues** are - where many incidents go **unreported**, due to fear, shame , or lack of support. Through AuraGuard, I wanted to create a space where people could express what happened to them **anonymously**, without judgment, and maybe feel a little safer doing so.
-
-> These things stay with you. They seem small to the person doing it, but they can lead to **trauma for life**.
+I've seen how serious and common **safety issues** are - where many incidents go **unreported**, due to fear, shame , or lack of support. Through AuraGuard, I wanted to create a space where people could express what happened to them **anonymously**, without judgment, and maybe feel a little safer doing so.
 
 The **goal is not to blame or target anyone**, but to:
 - Acknowledge that these experiences are real
 - Let people speak up, even in small ways
 - Show that even one person can try to help
 
-I truly believe that **we can’t fix the big things unless we’re willing to talk about them**.
+> Reporting is the first step towards safety.
+a feedback(be it positive or negative) is highly valuable and helpful so i can keep improving the platform for more users to come. 
+you can either click on mail icon on website or send an email to: auraguard.contact@gmail.com
 
 ---
 ## 🔮 What’s Next – Phase 2 Plans
 
 I’m planning to continue working on AuraGuard and add:
-- 📸 Camera/photo evidence 
-- 📂 File uploads
-- 📍 Smarter location tagging
-- 🔐 Optional login system for support follow-ups, method to discard fake reports
+-  Camera/photo evidence 
+-  File uploads
+-  Smarter location tagging
+-  Optional login system for support follow-ups, method to discard fake reports
 - And any features suggested by others!
 
-Your suggestions are always welcome. I’m doing my bit to **build something that matters**, even in a small way.
-
+Your suggestions are always welcome.
 > 🌍 Just trying to create a safer world, one report at a time.
 
 ## Author
-Made with Care by Shatakshi Gupta
+Made with Care by [Shatakshi Gupta](shatakshi.gupta85@gmail.com)
 
 ---
 
