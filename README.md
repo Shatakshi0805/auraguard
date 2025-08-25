@@ -1,52 +1,4 @@
-![logo](https://github.com/user-attachments/assets/6e0411d9-f61b-40d5-a2b4-ef74b674be4d)
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle -->
-  <circle cx="100" cy="100" r="95" fill="#FF6B9D" stroke="#E91E63" stroke-width="3"/>
-  
-  <!-- Inner protective circle -->
-  <circle cx="100" cy="100" r="75" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.8"/>
-  
-  <!-- Shield shape for protection -->
-  <path d="M100 40 L130 55 L130 85 Q130 110 100 125 Q70 110 70 85 L70 55 Z" 
-        fill="#FFFFFF" stroke="#E91E63" stroke-width="2"/>
-  
-  <!-- Female symbol inside shield -->
-  <circle cx="100" cy="70" r="12" fill="none" stroke="#E91E63" stroke-width="3"/>
-  <line x1="100" y1="82" x2="100" y2="100" stroke="#E91E63" stroke-width="3"/>
-  <line x1="92" y1="92" x2="108" y2="92" stroke="#E91E63" stroke-width="3"/>
-  
-  <!-- Report/document icon -->
-  <rect x="110" y="135" width="25" height="30" rx="2" fill="#FFFFFF" stroke="#E91E63" stroke-width="2"/>
-  <line x1="115" y1="145" x2="130" y2="145" stroke="#E91E63" stroke-width="1.5"/>
-  <line x1="115" y1="150" x2="125" y2="150" stroke="#E91E63" stroke-width="1.5"/>
-  <line x1="115" y1="155" x2="130" y2="155" stroke="#E91E63" stroke-width="1.5"/>
-  
-  <!-- Support hands -->
-  <path d="M65 135 Q60 130 65 125 Q70 130 75 135 Q70 140 65 135" 
-        fill="#FFFFFF" stroke="#E91E63" stroke-width="2"/>
-  
-  <!-- Small lotus petals for cultural touch -->
-  <g transform="translate(100,170)">
-    <path d="M0,-8 Q-6,-3 0,2 Q6,-3 0,-8" fill="#FFFFFF" opacity="0.9"/>
-    <path d="M-6,-6 Q-9,0 -3,3 Q3,0 -6,-6" fill="#FFFFFF" opacity="0.7"/>
-    <path d="M6,-6 Q9,0 3,3 Q-3,0 6,-6" fill="#FFFFFF" opacity="0.7"/>
-  </g>
-  
-  <!-- Empowerment rays -->
-  <g stroke="#FFFFFF" stroke-width="2" opacity="0.6">
-    <line x1="100" y1="25" x2="100" y2="35"/>
-    <line x1="140" y1="35" x2="135" y2="43"/>
-    <line x1="165" y1="75" x2="155" y2="75"/>
-    <line x1="155" y1="125" x2="145" y2="120"/>
-    <line x1="125" y1="165" x2="120" y2="155"/>
-    <line x1="75" y1="165" x2="80" y2="155"/>
-    <line x1="45" y1="125" x2="55" y2="120"/>
-    <line x1="35" y1="75" x2="45" y2="75"/>
-    <line x1="60" y1="35" x2="65" y2="43"/>
-  </g>
-</svg>
-
-# ✨AuraGuard
+ # AuraGuard
 
 I created **AuraGuard** to provide a safe and anonymous space for users to report uncomfortable or dangerous incidents they've faced. it features dynamic form handling, real-time report stats, and clean and responsive design.
 
@@ -111,16 +63,15 @@ Harassment, cat-calling, groping, may seem very small at a large aspect but they
 
 This project was built out of **curiosity**, a **desire to help**, and the hope to make even a small impact.
 
-I've seen how serious and common **safety issues** are - where many incidents go **unreported**, due to fear, shame , or lack of support. Through AuraGuard, I wanted to create a space where people could express what happened to them **anonymously**, without judgment, and maybe feel a little safer doing so.
+I've seen how serious and common **safety issues** are - where many incidents go **unreported**, due to fear, shame , or lack of support. Through this project, I wanted to create a space where people could express what happened to them **anonymously**, without judgment.
 
 The **goal is not to blame or target anyone**, but to:
 - Acknowledge that these experiences are real
 - Let people speak up, even in small ways
-- Show that even one person can try to help
 
 > Reporting is the first step towards safety.
 a feedback(be it positive or negative) is highly valuable and helpful so i can keep improving the platform for more users to come. 
-you can either click on mail icon on website or send an email to: auraguard.contact@gmail.com
+you can either click on mail icon on website or send an email to: shatakshi.gupta85@gmail.com
 
 ---
 ## 🔮 What’s Next – Phase 2 Plans
@@ -129,11 +80,11 @@ I’m planning to continue working on AuraGuard and add:
 -  Camera/photo evidence 
 -  File uploads
 -  Smarter location tagging
--  Optional login system for support follow-ups, method to discard fake reports
+-  Method to discard fake reports
 - And any features suggested by others!
 
 Your suggestions are always welcome.
-> 🌍 Just trying to create a safer world, one report at a time.
+> Just doing my bit to create a safer world.
 
 ## Author
 Made with Care by [Shatakshi Gupta](shatakshi.gupta85@gmail.com)
